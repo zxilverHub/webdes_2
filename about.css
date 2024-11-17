@@ -1,0 +1,189 @@
+header {
+    padding: clamp(7rem, 12vw, 10rem) 5% clamp(1rem, 3vw, 3rem) 5%;
+    text-align: center;
+
+    .eyebrow,
+    .theme {
+        font-size: clamp(1rem, 3vw, 2rem);
+        font-weight: 100;
+    }
+
+    .title {
+        color: var(--secondary);
+        text-shadow: -3px 3px 0 var(--neutral);
+    }
+
+    .theme {
+        font-weight: var(--weight-md);
+        color: var(--primary);
+    }
+}
+
+main {
+    padding: 3rem 5%;
+
+    .illustration {
+        position: relative;
+        width: 100%;
+
+        .img {
+            width: 100%;
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 1rem;
+            }
+        }
+
+        .infos {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            align-items: start;
+
+            gap: 1rem;
+
+            width: min-content;
+
+            padding: clamp(1rem, 3vw, 2rem);
+            background-color: white;
+            border-top-left-radius: 1rem;
+
+            .subline {
+                width: 60ch;
+                max-width: 60ch;
+                line-height: 1.2rem;
+                font-weight: var(--weight-sm);
+            }
+
+            .questionmark {
+                padding: 1rem;
+                aspect-ratio: 1;
+                border: 1px solid var(--neutral);
+
+                display: grid;
+                place-items: center;
+                border-radius: 50%;
+            }
+
+            .titles {
+                color: var(--secondary);
+            }
+
+            .cta {
+                margin-top: 1rem;
+                background-color: var(--secondary);
+                color: white;
+            }
+
+            .cta:hover {
+                color: var(--secondary);
+                background: none;
+            }
+        }
+
+    }
+
+    .goals {
+        width: 100%;
+        margin-block: clamp(3rem, 12vw, 10rem) clamp(3rem, 10vw, 6rem);
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+        .left {
+            gap: 1rem;
+            align-items: start;
+
+            .cta {
+                margin-top: 1rem;
+                background-color: var(--primary);
+                color: white;
+            }
+
+            .subline {
+                font-weight: var(--weight-md);
+                color: var(--text);
+                opacity: .9;
+                max-width: 45ch;
+                line-height: 1.3rem;
+            }
+
+            .cta:hover {
+                color: var(--secondary);
+                border-color: var(--secondary);
+                background: none;
+            }
+        }
+
+        .right {
+            gap: 3rem;
+
+            p:not(.subline) {
+                font-size: clamp(1rem, 2vw, 1.4rem);
+                font-weight: var(--weight-md);
+                color: var(--secondary);
+                margin-bottom: 1rem;
+
+                span {
+                    padding: .2rem 1rem;
+                    color: white;
+                    background-color: var(--primary);
+                    border-radius: 1rem;
+                    margin-right: .5rem;
+                }
+
+            }
+
+            .subline {
+                font-weight: var(--weight-md);
+                color: var(--text);
+                opacity: .9;
+            }
+        }
+        
+    }
+}
+
+@media (max-width: 1023px) {
+    .illustration {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+        .infos {
+            width: 100% !important;
+            position: static !important;
+
+            .subline {
+                width: 100% !important;
+                text-align: justify;
+                /* min-width: none !important; */
+            }
+        }
+    }
+
+    .goals {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .goals {
+        margin-top: 5rem !important;
+        .left {
+            justify-content: center;
+            align-items: center !important;
+            text-align: center;
+            gap: .5rem !important;
+        }
+
+        .right {
+            .subline {
+                text-align: justify;
+            }
+        }
+    }
+}
