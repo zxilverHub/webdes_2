@@ -505,3 +505,33 @@ footer {
     }
 
 }
+
+.hero {
+    overflow: hidden;
+
+    > *:not(.bg1, .bg2) {
+        position: relative;
+        z-index: 10;
+    }
+}
+
+.bg1,
+.bg2 {
+    position: absolute;
+    bottom: -20%;
+    right: 0;
+    z-index: 0;
+
+    width: 300px;
+    height: 500px;
+    background-color: rgba(238, 238, 247, 0.4);
+    border-radius: 200px;
+    transform: rotate(-40deg);
+}
+
+
+.bg2 {
+    bottom: -25%;
+    right: -10%;
+    display: none;
+}
